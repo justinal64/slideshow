@@ -8,23 +8,34 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-    <div id="output" class="col-xs-12 col-lg-10 col-xs-offset-0 col-lg-offset-1">
-        <center>
-        <img src="img/code0.jpg" id="slideshow">
-        <span id="caption">Caption #0</span>
-        <div>
-            <input type="button" id="prev" value="Previous">
-            <input type="button" id="next" value="Next">
-            <input type="button" id="slideshowbtn" value="Start SlideShow">
-            <input type="checkbox" id="fadein"><span> Fade In</span>
-            <input type="checkbox" id="slidein"><span> Slide In</span>
+    <div class="row">
+        <div id="output" class="col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+            <div class="hovereffect">
+                <img src="img/code0.jpg" class="img-responsive" id="slideshow">
+                <div class="overlay">
+                    <h3 id="caption-header">IMAGE #1</h3>
+                    <p id="caption-para">Caption #1</p>
+                </div>
+            </div>
         </div>
-        </center>
     </div>
-    <div id="test"></div>
-
-
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3 p-t-1">
+            <center>
+                <div class="controls">
+                    <input type="button" id="prev" value="Previous">
+                    <input type="button" id="next" value="Next">
+                    <input type="button" id="slideshowbtn" value="Start SlideShow">
+                    <input type="checkbox" id="fadein"><span> Fade In</span>
+                    <input type="checkbox" id="slidein"><span> Slide In</span>
+                </div>
+            </center>
+        </div>
+    </div>
+    <!-- Jquery -->
     <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <!-- Jquery UI -->
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" crossorigin="anonymous"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="/javascript/slideshow.js" type="text/javascript" charset="utf-8"></script>
