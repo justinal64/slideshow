@@ -23,14 +23,14 @@ function displayImg(imgNum) {
     var isChecked = $('#slidein')[0];
     if(isChecked.checked) {
         $slideshow.hide("slide", { direction: "right" }, 1500, function() {
-        $slideshow.attr('src', `img/code${imgNum}.jpg`);
+        $slideshow.attr('src', `img/code${imgNum}.jpeg`);
         $('#caption-header').html(captionH[imgNum]);
         $('#caption-para').html(captionP[imgNum]);
         });
-        $slideshow.show("slide", { direction: "left" }, 500);
+        $slideshow.show("slide", { direction: "left" }, 1500);
     } else {
         $slideshow.fadeOut("slow", function() {
-            $slideshow.attr('src', `img/code${imgNum}.jpg`);
+            $slideshow.attr('src', `img/code${imgNum}.jpeg`);
             $('#caption-header').html(captionH[imgNum]);
             $('#caption-para').html(captionP[imgNum]);
         });
@@ -66,25 +66,7 @@ $slideShowBtn.click(function() {
     }
 });
 
-
 // Event listeners
-// Listener for fade in effect
-$('#fadein').on('change', function() {
-    if(this.checked) {
-        console.log("Checkbox is checked");
-    }
-});
-
-// Eventlistener to show caption
-// $slideshow.on('mouseover', function() {
-//     console.log("you moused over!!!");
-//     $('#caption').removeClass('hidden');
-// });
-// Eventlistener to remove caption
-// $('#controls').on('mouseover', function() {
-//     console.log("you moused out!!!");
-//     $('#caption').addClass('hidden');
-// });
 // prev and next also stop the slideshow if it is running
 $('#prev').click(function() {
     if(counter === 0) {
