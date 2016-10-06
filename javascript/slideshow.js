@@ -7,9 +7,10 @@ var $slideshow = $('#slideshow');
 var $slideShowBtn = $('#slideshowbtn');
 var counter = 0;
 var isRunning = false;
-var intv;
-var caption = ["Caption #0", "Caption #1", "Caption #2", "Caption #3",];
-var images = [""];
+var fade;
+var slide;
+var captionH = ["IMAGE #1", "IMAGE #2", "IMAGE #3", "IMAGE #4",];
+var captionP = ["Caption #1", "Caption #2", "Caption #3", "Caption #4",];
 
 // ajax call to an external source
 // $.get( "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY", function( nasa ) {
@@ -21,17 +22,17 @@ function displayImg(imgNum) {
     // checking if box is checked
     var isChecked = $('#slidein')[0];
     if(isChecked.checked) {
-        console.log("its clicked");
-        $slideshow.animate({ width: "0%" }, {duration: 2000, complete: function() {
-            console.log("done!!!");
-            $slideshow.attr('src', `img/code${imgNum}.jpg`);
-            $('#caption').html(caption[imgNum]);
-        }});
-            $slideshow.animate({ width: "100%" }, 2000 );
+        $slideshow.hide("slide", { direction: "right" }, 1500, function() {
+        $slideshow.attr('src', `img/code${imgNum}.jpg`);
+        $('#caption-header').html(captionH[imgNum]);
+        $('#caption-para').html(captionP[imgNum]);
+        });
+        $slideshow.show("slide", { direction: "left" }, 500);
     } else {
         $slideshow.fadeOut("slow", function() {
             $slideshow.attr('src', `img/code${imgNum}.jpg`);
-            $('#caption').html(caption[imgNum]);
+            $('#caption-header').html(captionH[imgNum]);
+            $('#caption-para').html(captionP[imgNum]);
         });
         $slideshow.fadeIn("slow");
     }
@@ -40,7 +41,7 @@ function displayImg(imgNum) {
 
 // AUTO SLIDE
 function auto(){
-intv = setInterval(function() {
+fade = setInterval(function() {
         if(counter === 3) {
             counter = 0;
         } else {
@@ -59,7 +60,7 @@ $slideShowBtn.click(function() {
         auto(); // start auto slide
     } else {
         // stop slideshow
-        clearInterval(intv);
+        clearInterval(fade);
         isRunning = false;
         $slideShowBtn.val("Start SlideShow");
     }
@@ -74,6 +75,16 @@ $('#fadein').on('change', function() {
     }
 });
 
+// Eventlistener to show caption
+// $slideshow.on('mouseover', function() {
+//     console.log("you moused over!!!");
+//     $('#caption').removeClass('hidden');
+// });
+// Eventlistener to remove caption
+// $('#controls').on('mouseover', function() {
+//     console.log("you moused out!!!");
+//     $('#caption').addClass('hidden');
+// });
 // prev and next also stop the slideshow if it is running
 $('#prev').click(function() {
     if(counter === 0) {
@@ -82,7 +93,7 @@ $('#prev').click(function() {
         counter--;
     }
     // Stops the function auto from running
-    clearInterval(intv);
+    clearInterval(fade);
     $slideShowBtn.val("Start SlideShow");
     displayImg(counter);
 });
@@ -94,7 +105,7 @@ $('#next').click(function(e) {
         counter++;
     }
     // Stops the function auto from running
-    clearInterval(intv);
+    clearInterval(fade);
     $slideShowBtn.val("Start SlideShow");
     displayImg(counter);
 });
