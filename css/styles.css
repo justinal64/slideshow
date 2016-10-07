@@ -18,7 +18,7 @@ img {
 }
 
 .controls {
-    margin: 0 auto;
+    margin: 0 auto
 }
 
 /*https://miketricking.github.io/dist/*/
@@ -146,3 +146,35 @@ img {
     -webkit-transition-delay: 0.2s;
     transition-delay: 0.2s;
 }
+
+/*Custom buttons*/
+.btn {
+    background-color:transparent;
+    -moz-border-radius:11px;
+    -webkit-border-radius:11px;
+    border-radius:11px;
+    border:1px solid #ffffff;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size:16px;
+    text-decoration:none;
+    outline: none;
+}
+.btn:hover {
+    background-color:transparent;
+    color: #ffffff;
+}
+.btn:active {
+    position:relative;
+    top:1px;
+    outline: none;
+    color: #ffffff;
+}
+.btn:focus {
+    outline: none;
+    color: #ffffff;
+}
+
+
