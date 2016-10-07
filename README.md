@@ -36,11 +36,11 @@ This is an example of the caption feature.
 <br/>
 ![Caption](img/Screenshots/Caption.png)
 <br/>
-This is what the website looks like when is it loaded on a screen size between 720px - 991px.
+This is what the website looks like when it is loaded on a screen size between 720px - 991px.
 <br/>
 ![Medium](img/Screenshots/Medium.png)
 <br/>
-This is what the website looks like on an screen under 770px
+This is what the website looks like on a screen under 770px
 <br/>
 ![Small](img/Screenshots/Small.png)
 
